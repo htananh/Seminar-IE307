@@ -8,6 +8,7 @@ import {
 	Text,
 	View,
 	StyleSheet,
+	Button,
 } from "react-native";
 
 interface RegisterScreenProps {
@@ -64,6 +65,8 @@ export const RegisterScreen = ({ navigation }: RegisterScreenProps) => {
 						</Text>
 					</Text>
 				</View>
+				{/* <Button title="Back" onPress={() => navigation.goBack()} />
+				<Button title="Go to Home" onPress={() => navigation.popToTop()} /> */}
 			</View>
 		</SafeAreaView>
 	);

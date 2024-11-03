@@ -8,13 +8,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { Text, View, StyleSheet } from 'react-native';
 
 const Tab = createBottomTabNavigator();
-const favouritesCount = 3; // Giá trị mặc định của badge
+const favouritesCount = 3;
 
 const MainBottomTab = () => (
   <Tab.Navigator
+  // initialRouteName="Favorites"
     screenOptions={({ route }) => ({
       headerShown: false,
       tabBarIcon: ({ focused, color, size }) => {
+        
         let iconName: keyof typeof Ionicons.glyphMap = 'home-outline';
 
         if (route.name === 'Home') {
@@ -27,25 +29,28 @@ const MainBottomTab = () => (
           iconName = focused ? 'person' : 'person-outline';
         }
 
-        // Hiển thị badge cho tab "Favorites" nếu favouritesCount > 0
         return (
           <View>
             <Ionicons name={iconName} size={size} color={color} />
-            {route.name === 'Favorites' && favouritesCount > 0 && (
+            {/* {route.name === 'Favorites' && favouritesCount > 0 && (
               <View style={styles.badgeContainer}>
                 <Text style={styles.badgeText}>{favouritesCount}</Text>
               </View>
-            )}
+            )} */}
           </View>
         );
       },
       tabBarActiveTintColor: 'tomato',
-      tabBarInactiveTintColor: 'gray',
+      tabBarInactiveTintColor: 'black',
     })}
   >
-    <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Screen options={{
+    // tabBarLabel: 'Trang Chủ',
+  }} name="Home" component={HomeScreen} />
     <Tab.Screen name="Categories" component={CategoriesScreen} />
-    <Tab.Screen name="Favorites" component={FavoritesScreen} />
+    <Tab.Screen options={{
+    tabBarBadge: favouritesCount > 0 ? favouritesCount : undefined, // Hiển thị badge chỉ khi có mục yêu thích
+  }} name="Favorites" component={FavoritesScreen} />
     <Tab.Screen name="Account" component={AccountScreen} />
   </Tab.Navigator>
 );
