@@ -18,9 +18,11 @@ const HomeScreen = () => {
 }
 const styles = StyleSheet.create({
     container: {
+        display: 'flex',
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
+        height: '100%',
         padding: 24,
       },
       paragraphStyle: {
