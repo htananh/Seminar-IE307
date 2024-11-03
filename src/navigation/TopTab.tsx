@@ -12,6 +12,7 @@ const TopTabs = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        swipeEnabled: false,
         tabBarActiveTintColor: 'orange',
         tabBarInactiveTintColor: 'white',
         tabBarStyle: { backgroundColor: '#6200ee',  marginTop: 30 },
