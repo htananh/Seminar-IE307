@@ -1,11 +1,18 @@
-import { SafeAreaView, View, Text } from "react-native"
+import { SafeAreaView, View, Text, Button } from "react-native"
 import { StyleSheet } from "react-native"
-const CategoriesScreen = () => {
+interface CategoriesScreenProps {
+    navigation: any;
+}
+const CategoriesScreen = ({ navigation }: CategoriesScreenProps) => {
     return (
-			<View style={styles.center}>
-				<Text>Category Screen</Text>
-			</View>
-	)
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>Đây là Catogory</Text>
+          <Button 
+            title="Đi đến account" 
+            onPress={() => navigation.navigate('account')} 
+          />
+        </View>
+      );
 }
 const styles = StyleSheet.create({
     center: {

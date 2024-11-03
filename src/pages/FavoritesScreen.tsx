@@ -1,9 +1,16 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-const FavoritesScreen = () => {
+import { View, Text, StyleSheet, Button } from "react-native";
+interface FavoritesScreenProps {
+    navigation: any;
+}
+const FavoritesScreen = ({ navigation }:FavoritesScreenProps) => {
   return (
-    <View style={styles.screen}>
-      <Text>Favorites Screen</Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Đây là Favorites</Text>
+      <Button 
+        title="Đi đến Categories" 
+        onPress={() => navigation.navigate('categories')} 
+      />
     </View>
   );
 };
