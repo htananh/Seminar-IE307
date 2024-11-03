@@ -14,6 +14,7 @@ const RootNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {authContext?.isAuthenticated ? (
+          
           <React.Fragment>
           <Stack.Screen name="Bottom" component={MainBottomTab} />
         </React.Fragment>

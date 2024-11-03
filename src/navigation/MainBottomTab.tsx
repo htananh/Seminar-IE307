@@ -7,7 +7,7 @@ import AccountScreen from '../screens/AccountScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { Text, View, StyleSheet } from 'react-native';
 import TopTabs from './TopTab';
-
+import FragmentView from './FragmentView';
 const Tab = createBottomTabNavigator();
 const favouritesCount = 3;
 
@@ -52,7 +52,7 @@ const MainBottomTab = () => (
     <Tab.Screen name="Categories" component={TopTabs} />
     <Tab.Screen options={{
     tabBarBadge: favouritesCount > 0 ? favouritesCount : undefined, // Hiển thị badge chỉ khi có mục yêu thích
-  }} name="Favorites" component={FavoritesScreen} />
+  }} name="Favorites" component={FragmentView} />
     <Tab.Screen name="Account" component={AccountScreen} />
   </Tab.Navigator>
 );
