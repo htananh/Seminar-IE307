@@ -5,7 +5,6 @@ import AuthStack from './AuthStack';
 import MainBottomTab from './MainBottomTab';
 import { AuthContext } from '../context/AuthContext';
 import TopTabs from './TopTab';
-
 const Stack = createStackNavigator();
 
 const RootNavigator = () => {
@@ -13,7 +12,7 @@ const RootNavigator = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator screenOptions={{ headerShown: true }}>
         {authContext?.isAuthenticated ? (
           <React.Fragment>
           <Stack.Screen name="Bottom" component={MainBottomTab} />

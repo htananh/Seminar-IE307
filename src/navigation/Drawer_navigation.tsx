@@ -10,7 +10,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Drawer = createDrawerNavigator();
 
-export default function Layout() {
+export default function Drawer_navigation() {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
