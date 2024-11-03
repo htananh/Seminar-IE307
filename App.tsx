@@ -7,11 +7,10 @@ import { NavigationContainer } from '@react-navigation/native';
 export default function App() {
   return (
   <AuthProvider>
-    <NavigationContainer>
+    {/* <NavigationContainer>
       <Layout />
-      {/* <StatusBar style="auto" /> */}
-    </NavigationContainer>
-    {/* <RootNavigator /> */}
+    </NavigationContainer> */}
+    <RootNavigator />
   </AuthProvider>
   );
 }
